@@ -11,8 +11,19 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col justify-between">
 
-    <!-- Cabeçalho Principal Simplificado -->
-    <header class="bg-slate-900 border-b border-slate-800 py-6 px-4 text-center shadow-lg">
+    <!-- Cabeçalho Principal com Imagem Solicitada (Sem Cortes) -->
+    <header class="bg-slate-900 border-b border-slate-800 py-6 px-4 shadow-lg flex flex-col items-center">
+        <!-- Frame Retangular Arredondado que exibe a imagem por completo sem cortes -->
+        <div class="relative w-48 h-20 md:w-56 md:h-24 mb-3 bg-slate-950 rounded-xl border border-slate-800 flex items-center justify-center overflow-hidden shadow-lg shadow-emerald-950/20">
+            <!-- Texto de backup caso o carregamento da imagem falhe -->
+            <span class="absolute text-emerald-400 font-black text-2xl tracking-tighter select-none">EPE</span>
+            <!-- Nova Imagem fornecida pelo usuário, ajustada com object-contain para exibição completa -->
+            <img src="https://lh6.googleusercontent.com/proxy/AZAAGt8gphoUunxsPnEQq3nIlfcWn9fgvww5eatcQwckrpr9QL1HB1VUB9zDbZ3kt2ZCoVSN6tk_7uwjm9zNVud2uILNNgr-qxv-djyvf4wcYRF0SILHd7VEPNw3p_hYRGS6LIbf7g" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.style.display='none'" 
+                 class="absolute inset-0 w-full h-full object-contain p-1 z-10" 
+                 alt="Logo Esporte por Esporte">
+        </div>
         <h1 class="text-3xl md:text-5xl font-black tracking-widest text-emerald-400">ESPORTE POR ESPORTE</h1>
         <p class="text-sm md:text-base font-semibold tracking-wider text-slate-400 mt-1 uppercase">CALCULADORA SÉRIE A</p>
     </header>

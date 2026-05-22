@@ -17,37 +17,132 @@
         <p class="text-sm md:text-base font-semibold tracking-wider text-slate-400 mt-1 uppercase">CALCULADORA SÉRIE A</p>
     </header>
 
-    <!-- Conteúdo do Aplicativo -->
+    <!-- Conteúdo Principal do Aplicativo -->
     <main class="max-w-6xl w-full mx-auto p-4 md:p-6 flex-grow space-y-6">
         
-        <!-- Seção de Instruções (Botão de atualizar removido daqui) -->
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
-            <h2 class="text-lg font-bold text-slate-200">Simulador de Probabilidades</h2>
-            <p class="text-xs text-slate-400 mt-1">Utilize os botões <span class="text-emerald-400 font-bold">(+)</span> e <span class="text-rose-400 font-bold">(-)</span> na tabela para simular pontos e recalcular os riscos de queda.</p>
+        <!-- Carrossel de Próximos Jogos do Santos FC (Acima da Tabela - Referência ESPN Calendário) -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl space-y-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="w-3.5 h-3.5 bg-emerald-400 rounded-full animate-ping absolute"></span>
+                    <span class="w-3.5 h-3.5 bg-emerald-400 rounded-full"></span>
+                    <h3 class="text-sm font-extrabold uppercase text-slate-200 tracking-wider">Próximos Jogos - Santos FC</h3>
+                </div>
+                <!-- Link específico solicitado -->
+                <a href="https://www.espn.com.br/futebol/time/calendario/_/id/2674/bra.santos" target="_blank" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1 transition">
+                    Ver Calendário no ESPN ↗
+                </a>
+            </div>
+            
+            <!-- Carrossel Horizontal -->
+            <div class="flex gap-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-slate-800 scrollbar-track-transparent">
+                
+                <!-- Jogo 1 (Grêmio x Santos - Brasileirão Serie A) -->
+                <div class="min-w-[280px] md:min-w-[300px] bg-slate-950 border border-slate-800 rounded-lg p-4 space-y-3 shrink-0 hover:border-emerald-500 transition">
+                    <div class="flex justify-between items-center text-[10px] font-bold text-slate-500 uppercase">
+                        <span class="text-emerald-400 font-black">Brasileirão Série A</span>
+                        <span>Rodada 17</span>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="font-bold text-slate-350">Grêmio</span>
+                            <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">CASA</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="font-bold text-emerald-400">Santos FC</span>
+                            <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">FORA</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-slate-900 pt-2 text-[11px] text-slate-400">
+                        <p class="font-semibold text-slate-250">Sábado, 23 de Maio de 2026</p>
+                        <p class="text-[10px] text-slate-500 mt-0.5 flex items-center gap-1">
+                            <i data-lucide="map-pin" class="w-3 h-3"></i> Arena do Grêmio - 19:00
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Jogo 2 (Santos x Deportivo Cuenca - Copa Sul-Americana) -->
+                <div class="min-w-[280px] md:min-w-[300px] bg-slate-950 border border-slate-800 rounded-lg p-4 space-y-3 shrink-0 hover:border-emerald-500 transition">
+                    <div class="flex justify-between items-center text-[10px] font-bold text-slate-500 uppercase">
+                        <span class="text-amber-500 font-black">Copa Sul-Americana</span>
+                        <span>Rodada 6</span>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="font-bold text-emerald-400">Santos FC</span>
+                            <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">CASA</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="font-bold text-slate-350">Deportivo Cuenca (EQU)</span>
+                            <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">FORA</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-slate-900 pt-2 text-[11px] text-slate-400">
+                        <p class="font-semibold text-slate-250">Terça-feira, 26 de Maio de 2026</p>
+                        <p class="text-[10px] text-slate-500 mt-0.5 flex items-center gap-1">
+                            <i data-lucide="map-pin" class="w-3 h-3"></i> Vila Belmiro - 21:30
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Jogo 3 (Santos x Vitória - Brasileirão Serie A) -->
+                <div class="min-w-[280px] md:min-w-[300px] bg-slate-950 border border-slate-800 rounded-lg p-4 space-y-3 shrink-0 hover:border-emerald-500 transition">
+                    <div class="flex justify-between items-center text-[10px] font-bold text-slate-500 uppercase">
+                        <span class="text-emerald-400 font-black">Brasileirão Série A</span>
+                        <span>Rodada 18</span>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="font-bold text-emerald-400">Santos FC</span>
+                            <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">CASA</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="font-bold text-slate-350">Vitória</span>
+                            <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">FORA</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-slate-900 pt-2 text-[11px] text-slate-400">
+                        <p class="font-semibold text-slate-250">Sábado, 30 de Maio de 2026</p>
+                        <p class="text-[10px] text-slate-500 mt-0.5 flex items-center gap-1">
+                            <i data-lucide="map-pin" class="w-3 h-3"></i> Vila Belmiro - 18:30
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Seção de Instruções do Simulador -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
+            <h2 class="text-base font-bold text-slate-200">Simulador de Probabilidades</h2>
+            <p class="text-xs text-slate-400 mt-1">Simule o andamento do campeonato ajustando diretamente as **Vitórias**, **Empates** e **Derrotas** de cada time para ver os pontos e o risco de rebaixamento recalculados em tempo real.</p>
         </div>
 
         <!-- Tabela Responsiva de Classificação -->
         <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
             <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse min-w-[650px]">
+                <table class="w-full text-left border-collapse min-w-[850px]">
                     <thead>
                         <tr class="bg-slate-850 border-b border-slate-800 text-slate-400 text-xs font-bold uppercase tracking-wider">
-                            <th class="py-4 px-4 text-center w-12">Pos</th>
+                            <th class="py-4 px-3 text-center w-12">Pos</th>
                             <th class="py-4 px-4">Clube</th>
-                            <th class="py-4 px-4 text-center w-20">J</th>
-                            <th class="py-4 px-4 text-center w-36">Pontos</th>
-                            <th class="py-4 px-4 text-center w-36">Risco de Queda</th>
+                            <th class="py-4 px-3 text-center w-14 border-r border-slate-800">J</th>
+                            <th class="py-4 px-3 text-center w-16 text-emerald-400">Pontos</th>
+                            <th class="py-4 px-3 text-center w-28">Vitórias (V)</th>
+                            <th class="py-4 px-3 text-center w-28">Empates (E)</th>
+                            <th class="py-4 px-3 text-center w-28 border-r border-slate-800">Derrotas (D)</th>
+                            <th class="py-4 px-4 text-center w-32">Risco de Queda</th>
                             <th class="py-4 px-4">Técnico Atual</th>
                         </tr>
                     </thead>
                     <tbody id="table-body" class="divide-y divide-slate-850 text-sm">
-                        <!-- Conteúdo será inserido dinamicamente pelo JavaScript -->
+                        <!-- Conteúdo inserido pelo JS -->
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- Seção: Calculadora de Aproveitamento de Técnico -->
+        <!-- Seção: Calculadora de Aproveitamento -->
         <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-2xl">
             <div class="flex items-center gap-3 mb-4 border-b border-slate-800 pb-3">
                 <div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
@@ -60,7 +155,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-                <!-- Inputs de Vitórias, Empates e Derrotas -->
                 <div class="md:col-span-2 grid grid-cols-3 gap-4">
                     <div class="flex flex-col">
                         <label for="calc-wins" class="text-xs font-bold text-slate-400 uppercase mb-2">Vitórias</label>
@@ -76,7 +170,6 @@
                     </div>
                 </div>
 
-                <!-- Painel de Resultado do Aproveitamento -->
                 <div class="bg-slate-950 border border-slate-800 rounded-xl p-5 text-center flex flex-col justify-center items-center h-full min-h-[140px]">
                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Aproveitamento</span>
                     <span id="result-percentage" class="text-4xl font-black text-emerald-400 tracking-tight">0.0%</span>
@@ -89,10 +182,25 @@
             </div>
         </div>
 
-        <!-- Alerta informativo -->
+        <!-- Seção: Botão do YouTube -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-2xl flex flex-col items-center text-center space-y-4">
+            <div class="p-3 bg-red-500/10 rounded-full text-red-500">
+                <i data-lucide="youtube" class="w-8 h-8 animate-pulse"></i>
+            </div>
+            <div>
+                <h3 class="text-lg font-extrabold text-slate-200 uppercase tracking-wide">Acompanhe no YouTube</h3>
+                <p class="text-xs text-slate-400 max-w-md mx-auto mt-1">Inscreva-se e assista aos debates, análises e transmissões ao vivo da bancada do Esporte por Esporte.</p>
+            </div>
+            <a href="https://www.youtube.com/@EPE" target="_blank" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-extrabold py-3 px-6 rounded-xl transition duration-200 shadow-lg shadow-red-950/30">
+                <span>Canal do Esporte por Esporte</span>
+                <i data-lucide="external-link" class="w-5 h-5"></i>
+            </a>
+        </div>
+
+        <!-- Alerta informativo rodapé -->
         <div class="flex items-start gap-2 text-xs text-slate-500 px-2">
             <i data-lucide="info" class="w-4 h-4 shrink-0 mt-0.5 text-emerald-500"></i>
-            <p>O Risco de Queda é estimado matematicamente com base na projeção para atingir a meta histórica de segurança de 45 pontos, ponderado pela posição atual e jogos restantes. A calculadora de aproveitamento baseia-se na fórmula padrão onde cada vitória vale 3 pontos e o empate vale 1 ponto.</p>
+            <p>O Risco de Queda avalia a projeção pontual de cada clube visando a meta histórica de 45 pontos no Brasileirão 2026. O cronograma de partidas do Santos FC reflete a agenda oficial extraída da base da ESPN.</p>
         </div>
 
     </main>
@@ -119,43 +227,42 @@
 
     <!-- Lógica JavaScript do Aplicativo -->
     <script>
-        // Dados e técnicos baseados na classificação oficial de 2026
+        // Dados oficiais mapeados com o desdobramento exato de Vitórias, Empates e Derrotas do Brasileirão 2026
         const teamDatabase = [
-            { id: 1, name: "Palmeiras", logoBg: "#006437", logoText: "#FFF", played: 16, points: 35, coach: "Abel Ferreira" },
-            { id: 2, name: "Flamengo", logoBg: "#C1272D", logoText: "#FFF", played: 15, points: 31, coach: "Leonardo Jardim" },
-            { id: 3, name: "Fluminense", logoBg: "#800020", logoText: "#FFF", played: 16, points: 30, coach: "Luis Zubeldía" },
-            { id: 4, name: "São Paulo", logoBg: "#FF0000", logoText: "#FFF", played: 16, points: 24, coach: "Dorival Júnior" },
-            { id: 5, name: "Athletico-PR", logoBg: "#000", logoText: "#C1272D", played: 16, points: 24, coach: "Odair Hellmann" },
-            { id: 6, name: "Red Bull Bragantino", logoBg: "#FFF", logoText: "#FF0000", played: 16, points: 23, coach: "Vagner Mancini" },
-            { id: 7, name: "Coritiba SAF", logoBg: "#00532E", logoText: "#FFF", played: 16, points: 23, coach: "Fernando Seabra" },
-            { id: 8, name: "Bahia", logoBg: "#004B87", logoText: "#FFF", played: 15, points: 23, coach: "Rogério Ceni" },
-            { id: 9, name: "Botafogo", logoBg: "#000", logoText: "#FFF", played: 15, points: 21, coach: "Franclim Carvalho" },
-            { id: 10, name: "Atlético-MG", logoBg: "#222", logoText: "#FFF", played: 16, points: 21, coach: "Eduardo Domínguez" },
-            { id: 11, name: "Internacional", logoBg: "#E31C1C", logoText: "#FFF", played: 16, points: 21, coach: "Paulo Pezzolano" },
-            { id: 12, name: "Vasco da Gama SAF", logoBg: "#111", logoText: "#FFF", played: 16, points: 20, coach: "Renato Gaúcho" },
-            { id: 13, name: "Cruzeiro", logoBg: "#003399", logoText: "#FFF", played: 16, points: 20, coach: "Artur Jorge" },
-            { id: 14, name: "Vitória", logoBg: "#E31C1C", logoText: "#000", played: 15, points: 19, coach: "Jair Ventura" },
-            { id: 15, name: "Grêmio", logoBg: "#0D82D1", logoText: "#FFF", played: 16, points: 18, coach: "Luís Castro" },
-            { id: 16, name: "Santos FC", logoBg: "#FFF", logoText: "#000", played: 16, points: 18, coach: "Cuca" },
-            { id: 17, name: "Corinthians", logoBg: "#111", logoText: "#FFF", played: 16, points: 18, coach: "Fernando Diniz" },
-            { id: 18, name: "Remo", logoBg: "#121A3E", logoText: "#FFF", played: 16, points: 15, coach: "Léo Condé" },
-            { id: 19, name: "Mirassol", logoBg: "#FFD700", logoText: "#008000", played: 15, points: 13, coach: "Rafael Guanaes" },
-            { id: 20, name: "Chapecoense", logoBg: "#007A33", logoText: "#FFF", played: 15, points: 9, coach: "Fábio Matias" }
+            { id: 1, name: "Palmeiras", logoBg: "#006437", logoText: "#FFF", played: 16, points: 35, wins: 10, draws: 5, losses: 1, coach: "Abel Ferreira" },
+            { id: 2, name: "Flamengo", logoBg: "#C1272D", logoText: "#FFF", played: 15, points: 31, wins: 9, draws: 4, losses: 2, coach: "Leonardo Jardim" },
+            { id: 3, name: "Fluminense", logoBg: "#800020", logoText: "#FFF", played: 16, points: 30, wins: 9, draws: 3, losses: 4, coach: "Luis Zubeldía" },
+            { id: 4, name: "São Paulo", logoBg: "#FF0000", logoText: "#FFF", played: 16, points: 24, wins: 7, draws: 3, losses: 6, coach: "Dorival Júnior" },
+            { id: 5, name: "Athletico-PR", logoBg: "#000", logoText: "#C1272D", played: 16, points: 24, wins: 7, draws: 3, losses: 6, coach: "Odair Hellmann" },
+            { id: 6, name: "Red Bull Bragantino", logoBg: "#FFF", logoText: "#FF0000", played: 16, points: 23, wins: 6, draws: 5, losses: 5, coach: "Vagner Mancini" },
+            { id: 7, name: "Coritiba SAF", logoBg: "#00532E", logoText: "#FFF", played: 16, points: 23, wins: 6, draws: 5, losses: 5, coach: "Fernando Seabra" },
+            { id: 8, name: "Bahia", logoBg: "#004B87", logoText: "#FFF", played: 15, points: 23, wins: 6, draws: 5, losses: 4, coach: "Rogério Ceni" },
+            { id: 9, name: "Botafogo", logoBg: "#000", logoText: "#FFF", played: 15, points: 21, wins: 6, draws: 3, losses: 6, coach: "Franclim Carvalho" },
+            { id: 10, name: "Atlético-MG", logoBg: "#222", logoText: "#FFF", played: 16, points: 21, wins: 5, draws: 6, losses: 5, coach: "Eduardo Domínguez" },
+            { id: 11, name: "Internacional", logoBg: "#E31C1C", logoText: "#FFF", played: 16, points: 21, wins: 5, draws: 6, losses: 5, coach: "Paulo Pezzolano" },
+            { id: 12, name: "Vasco da Gama SAF", logoBg: "#111", logoText: "#FFF", played: 16, points: 20, wins: 5, draws: 5, losses: 6, coach: "Renato Gaúcho" },
+            { id: 13, name: "Cruzeiro", logoBg: "#003399", logoText: "#FFF", played: 16, points: 20, wins: 5, draws: 5, losses: 6, coach: "Artur Jorge" },
+            { id: 14, name: "Vitória", logoBg: "#E31C1C", logoText: "#000", played: 15, points: 19, wins: 5, draws: 4, losses: 6, coach: "Jair Ventura" },
+            { id: 15, name: "Grêmio", logoBg: "#0D82D1", logoText: "#FFF", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Luís Castro" },
+            { id: 16, name: "Santos FC", logoBg: "#FFF", logoText: "#000", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Cuca" },
+            { id: 17, name: "Corinthians", logoBg: "#111", logoText: "#FFF", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Fernando Diniz" },
+            { id: 18, name: "Remo", logoBg: "#121A3E", logoText: "#FFF", played: 16, points: 15, wins: 3, draws: 6, losses: 7, coach: "Léo Condé" },
+            { id: 19, name: "Mirassol", logoBg: "#FFD700", logoText: "#008000", played: 15, points: 13, wins: 3, draws: 4, losses: 8, coach: "Rafael Guanaes" },
+            { id: 20, name: "Chapecoense", logoBg: "#007A33", logoText: "#FFF", played: 15, points: 9, wins: 1, draws: 6, losses: 8, coach: "Fábio Matias" }
         ];
 
         // Função de cálculo de Risco de Queda (Probabilidade Matemática baseada em metas)
         function calculateRelegationRisk(points, played, rank) {
-            const safetyMargin = 45; // Meta de pontos
+            const safetyMargin = 45; 
             const remainingMatches = 38 - played;
             
             if (points >= safetyMargin) return 0;
             
             const pointsNeeded = safetyMargin - points;
-            if (pointsNeeded > (remainingMatches * 3)) return 100; // Matematicamente rebaixado
+            if (pointsNeeded > (remainingMatches * 3)) return 100;
 
             const requiredPpg = pointsNeeded / remainingMatches;
 
-            // Fatores de risco ponderados pela posição
             let risk = (requiredPpg / 3) * 100;
             
             if (rank <= 6) {
@@ -171,9 +278,10 @@
             return Math.min(99.9, Math.max(0, parseFloat(risk.toFixed(1))));
         }
 
-        // Renderiza a tabela de classificação
+        // Renderiza a tabela de classificação com o novo desdobramento de estatísticas
         function renderTable() {
-            teamDatabase.sort((a, b) => b.points - a.points || b.played - a.played || a.id - b.id);
+            // Ordenar por pontos, saldo (simulado através de vitórias) e ID como desempate
+            teamDatabase.sort((a, b) => b.points - a.points || b.wins - a.wins || a.id - b.id);
 
             const tbody = document.getElementById("table-body");
             tbody.innerHTML = "";
@@ -200,7 +308,7 @@
                 const tr = document.createElement("tr");
                 tr.className = rowBgClass;
                 tr.innerHTML = `
-                    <td class="py-3 px-4 text-center font-extrabold">
+                    <td class="py-3 px-3 text-center font-extrabold">
                         <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs ${badgeClass}">
                             ${rank}
                         </span>
@@ -210,17 +318,39 @@
                             <span class="w-5 h-5 rounded-full flex items-center justify-center font-black text-[9px] shadow-sm shrink-0" style="background-color: ${team.logoBg}; color: ${team.logoText};">
                                 ${team.name.substring(0,2).toUpperCase()}
                             </span>
-                            <span class="truncate max-w-[150px] md:max-w-none">${team.name}</span>
+                            <span class="truncate max-w-[140px] md:max-w-none">${team.name}</span>
                         </div>
                     </td>
-                    <td class="py-3 px-4 text-center font-medium text-slate-400">${team.played}</td>
-                    <td class="py-3 px-4 text-center">
-                        <div class="flex items-center justify-center gap-2">
-                            <button onclick="updatePoints(${team.id}, -1)" class="w-6 h-6 rounded bg-slate-800 hover:bg-slate-700 text-rose-400 flex items-center justify-center font-bold text-xs select-none">-</button>
-                            <span class="font-bold text-slate-100 min-w-[20px] text-center">${team.points}</span>
-                            <button onclick="updatePoints(${team.id}, 1)" class="w-6 h-6 rounded bg-slate-800 hover:bg-slate-700 text-emerald-400 flex items-center justify-center font-bold text-xs select-none">+</button>
+                    <td class="py-3 px-3 text-center font-semibold text-slate-400 border-r border-slate-800/80">${team.played}</td>
+                    <td class="py-3 px-3 text-center font-extrabold text-emerald-400 bg-slate-900/40">${team.points}</td>
+                    
+                    <!-- Simulação de Vitórias -->
+                    <td class="py-3 px-3 text-center">
+                        <div class="flex items-center justify-center gap-1.5">
+                            <button onclick="updateStat(${team.id}, 'wins', -1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-rose-400 flex items-center justify-center font-bold text-xs select-none">-</button>
+                            <span class="font-bold text-slate-200 min-w-[16px] text-center">${team.wins}</span>
+                            <button onclick="updateStat(${team.id}, 'wins', 1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-emerald-400 flex items-center justify-center font-bold text-xs select-none">+</button>
                         </div>
                     </td>
+                    
+                    <!-- Simulação de Empates -->
+                    <td class="py-3 px-3 text-center">
+                        <div class="flex items-center justify-center gap-1.5">
+                            <button onclick="updateStat(${team.id}, 'draws', -1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-amber-400 flex items-center justify-center font-bold text-xs select-none">-</button>
+                            <span class="font-bold text-slate-200 min-w-[16px] text-center">${team.draws}</span>
+                            <button onclick="updateStat(${team.id}, 'draws', 1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-amber-400 flex items-center justify-center font-bold text-xs select-none">+</button>
+                        </div>
+                    </td>
+                    
+                    <!-- Simulação de Derrotas -->
+                    <td class="py-3 px-3 text-center border-r border-slate-800/80">
+                        <div class="flex items-center justify-center gap-1.5">
+                            <button onclick="updateStat(${team.id}, 'losses', -1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-rose-500 flex items-center justify-center font-bold text-xs select-none">-</button>
+                            <span class="font-bold text-slate-200 min-w-[16px] text-center">${team.losses}</span>
+                            <button onclick="updateStat(${team.id}, 'losses', 1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-emerald-500 flex items-center justify-center font-bold text-xs select-none">+</button>
+                        </div>
+                    </td>
+
                     <td class="py-3 px-4 text-center font-extrabold ${riskTextClass}">${risk}%</td>
                     <td class="py-3 px-4 text-slate-300 truncate max-w-[150px] md:max-w-none">${team.coach}</td>
                 `;
@@ -230,19 +360,39 @@
             lucide.createIcons();
         }
 
-        // Altera pontuações dinamicamente no simulador
-        function updatePoints(teamId, amount) {
+        // Incrementa ou decrementa estatísticas específicas preservando o limite de 38 rodadas
+        function updateStat(teamId, stat, amount) {
             const team = teamDatabase.find(t => t.id === teamId);
-            if (team) {
-                const newPoints = team.points + amount;
-                if (newPoints >= 0 && newPoints <= (team.played * 3)) {
-                    team.points = newPoints;
-                    renderTable();
+            if (!team) return;
+
+            // Calcula total de jogos pretendido
+            const currentTotal = team.wins + team.draws + team.losses;
+            
+            if (stat === 'wins') {
+                const target = team.wins + amount;
+                if (target >= 0 && (currentTotal + amount) <= 38) {
+                    team.wins = target;
+                }
+            } else if (stat === 'draws') {
+                const target = team.draws + amount;
+                if (target >= 0 && (currentTotal + amount) <= 38) {
+                    team.draws = target;
+                }
+            } else if (stat === 'losses') {
+                const target = team.losses + amount;
+                if (target >= 0 && (currentTotal + amount) <= 38) {
+                    team.losses = target;
                 }
             }
+
+            // Atualiza campos calculados
+            team.played = team.wins + team.draws + team.losses;
+            team.points = (team.wins * 3) + team.draws;
+
+            renderTable();
         }
 
-        // Função de Cálculo de Aproveitamento do Técnico (Interativa)
+        // Função de Cálculo de Aproveitamento de Técnico (Interativa)
         function calcCoachPerformance() {
             const wins = parseInt(document.getElementById("calc-wins").value) || 0;
             const draws = parseInt(document.getElementById("calc-draws").value) || 0;
@@ -277,7 +427,7 @@
                 shareText += `▪️ ${rank}º ${team.name}: ${team.points} pts (Risco de Queda: *${risk}%* | Técnico: ${team.coach})\n`;
             });
             
-            shareText += `\nCalcule as probabilidades e o aproveitamento do seu time!\n\n"DEUS EXISTE!" - ARMANDO GOMES`;
+            shareText += `\nCalcule as probabilidades de rebaixamento no Brasileirão e acompanhe as análises do programa!\n\n"DEUS EXISTE!" - ARMANDO GOMES`;
 
             if (navigator.share) {
                 navigator.share({

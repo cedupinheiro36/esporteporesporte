@@ -11,7 +11,7 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col justify-between">
 
-    <!-- Cabeçalho Principal -->
+    <!-- Cabeçalho Principal Simplificado -->
     <header class="bg-slate-900 border-b border-slate-800 py-6 px-4 text-center shadow-lg">
         <h1 class="text-3xl md:text-5xl font-black tracking-widest text-emerald-400">ESPORTE POR ESPORTE</h1>
         <p class="text-sm md:text-base font-semibold tracking-wider text-slate-400 mt-1 uppercase">CALCULADORA SÉRIE A</p>
@@ -49,7 +49,10 @@
                             <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">CASA</span>
                         </div>
                         <div class="flex items-center justify-between text-xs">
-                            <span class="font-bold text-emerald-400">Santos FC</span>
+                            <span class="font-bold text-emerald-400 flex items-center gap-1.5">
+                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/2674.png" class="w-4 h-4 object-contain" alt="">
+                                Santos FC
+                            </span>
                             <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">FORA</span>
                         </div>
                     </div>
@@ -69,7 +72,10 @@
                     </div>
                     <div class="space-y-2">
                         <div class="flex items-center justify-between text-xs">
-                            <span class="font-bold text-emerald-400">Santos FC</span>
+                            <span class="font-bold text-emerald-400 flex items-center gap-1.5">
+                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/2674.png" class="w-4 h-4 object-contain" alt="">
+                                Santos FC
+                            </span>
                             <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">CASA</span>
                         </div>
                         <div class="flex items-center justify-between text-xs">
@@ -93,7 +99,10 @@
                     </div>
                     <div class="space-y-2">
                         <div class="flex items-center justify-between text-xs">
-                            <span class="font-bold text-emerald-400">Santos FC</span>
+                            <span class="font-bold text-emerald-400 flex items-center gap-1.5">
+                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/2674.png" class="w-4 h-4 object-contain" alt="">
+                                Santos FC
+                            </span>
                             <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">CASA</span>
                         </div>
                         <div class="flex items-center justify-between text-xs">
@@ -115,7 +124,7 @@
         <!-- Seção de Instruções do Simulador -->
         <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
             <h2 class="text-base font-bold text-slate-200">Simulador de Probabilidades</h2>
-            <p class="text-xs text-slate-400 mt-1">Simule o andamento do campeonato ajustando diretamente as **Vitórias**, **Empates** e **Derrotas** de cada time para ver os pontos e o risco de rebaixamento recalculados em tempo real.</p>
+            <p class="text-xs text-slate-400 mt-1">Utilize os botões de ajuste <span class="text-emerald-400 font-bold">(+)</span> and <span class="text-rose-450 font-bold">(-)</span> na coluna de **Pontos** para recalcular o risco de queda e ver as estatísticas de Vitórias, Empates e Derrotas atualizadas proporcionalmente.</p>
         </div>
 
         <!-- Tabela Responsiva de Classificação -->
@@ -127,19 +136,33 @@
                             <th class="py-4 px-3 text-center w-12">Pos</th>
                             <th class="py-4 px-4">Clube</th>
                             <th class="py-4 px-3 text-center w-14 border-r border-slate-800">J</th>
-                            <th class="py-4 px-3 text-center w-16 text-emerald-400">Pontos</th>
-                            <th class="py-4 px-3 text-center w-28">Vitórias (V)</th>
-                            <th class="py-4 px-3 text-center w-28">Empates (E)</th>
-                            <th class="py-4 px-3 text-center w-28 border-r border-slate-800">Derrotas (D)</th>
+                            <th class="py-4 px-3 text-center w-36 text-emerald-400">Pontos</th>
+                            <th class="py-4 px-3 text-center w-14">V</th>
+                            <th class="py-4 px-3 text-center w-14">E</th>
+                            <th class="py-4 px-3 text-center w-14 border-r border-slate-800">D</th>
                             <th class="py-4 px-4 text-center w-32">Risco de Queda</th>
                             <th class="py-4 px-4">Técnico Atual</th>
                         </tr>
                     </thead>
                     <tbody id="table-body" class="divide-y divide-slate-850 text-sm">
-                        <!-- Conteúdo inserido pelo JS -->
+                        <!-- Conteúdo inserido dinamicamente pelo JS -->
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <!-- NOVA ESTRUTURA: Botões de Ação Lado a Lado (Compartilhar e Reiniciar) -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-2xl mx-auto pt-2">
+            <!-- Botão Compartilhar Resultados -->
+            <button onclick="shareResults()" class="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold py-3.5 px-6 rounded-xl transition duration-200 shadow-lg shadow-emerald-950/50 w-full sm:w-1/2">
+                <i data-lucide="share-2" class="w-5 h-5"></i>
+                <span>Compartilhar Resultados</span>
+            </button>
+            <!-- Botão Reiniciar Página (Refresh) -->
+            <button onclick="window.location.reload()" class="flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-extrabold py-3.5 px-6 rounded-xl transition duration-200 shadow-lg shadow-slate-950/50 w-full sm:w-1/2">
+                <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                <span>Reiniciar Página</span>
+            </button>
         </div>
 
         <!-- Seção: Calculadora de Aproveitamento -->
@@ -182,19 +205,54 @@
             </div>
         </div>
 
-        <!-- Seção: Botão do YouTube -->
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-2xl flex flex-col items-center text-center space-y-4">
-            <div class="p-3 bg-red-500/10 rounded-full text-red-500">
-                <i data-lucide="youtube" class="w-8 h-8 animate-pulse"></i>
+        <!-- Seção de Ações de Engajamento (YouTube, Instagram e PWA) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Card do YouTube -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-2xl flex flex-col items-center justify-between text-center space-y-4">
+                <div class="p-3 bg-red-500/10 rounded-full text-red-500">
+                    <i data-lucide="youtube" class="w-8 h-8 animate-pulse"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-extrabold text-slate-200 uppercase tracking-wide">YouTube</h3>
+                    <p class="text-xs text-slate-400 mt-1">Inscreva-se e assista aos debates e análises ao vivo da bancada do Esporte por Esporte.</p>
+                </div>
+                <a href="https://www.youtube.com/@EPE" target="_blank" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-extrabold py-3 px-6 rounded-xl transition duration-200 w-full justify-center shadow-lg shadow-red-950/30">
+                    <span>Canal no YouTube</span>
+                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                </a>
             </div>
-            <div>
-                <h3 class="text-lg font-extrabold text-slate-200 uppercase tracking-wide">Acompanhe no YouTube</h3>
-                <p class="text-xs text-slate-400 max-w-md mx-auto mt-1">Inscreva-se e assista aos debates, análises e transmissões ao vivo da bancada do Esporte por Esporte.</p>
+
+            <!-- Card do Instagram -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-2xl flex flex-col items-center justify-between text-center space-y-4">
+                <div class="p-3 bg-pink-500/10 rounded-full text-pink-500">
+                    <i data-lucide="instagram" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-extrabold text-slate-200 uppercase tracking-wide">Instagram</h3>
+                    <p class="text-xs text-slate-400 mt-1">Siga para acompanhar os bastidores das gravações, enquetes e notícias do Peixe em tempo real.</p>
+                </div>
+                <a href="https://www.instagram.com/esporteporesporte/" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:opacity-95 text-white font-extrabold py-3 px-6 rounded-xl transition duration-200 w-full justify-center shadow-lg shadow-pink-950/30">
+                    <span>Seguir no Instagram</span>
+                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                </a>
             </div>
-            <a href="https://www.youtube.com/@EPE" target="_blank" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-extrabold py-3 px-6 rounded-xl transition duration-200 shadow-lg shadow-red-950/30">
-                <span>Canal do Esporte por Esporte</span>
-                <i data-lucide="external-link" class="w-5 h-5"></i>
-            </a>
+
+            <!-- Card de Instalação e Atalho -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-2xl flex flex-col items-center justify-between text-center space-y-4">
+                <div class="p-3 bg-emerald-500/10 rounded-full text-emerald-400">
+                    <i data-lucide="smartphone" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-extrabold text-slate-200 uppercase tracking-wide">Instalar / Favorito</h3>
+                    <p class="text-xs text-slate-400 mt-1">Crie um atalho rápido na tela de início de seu celular (Android/iPhone) ou salve nos favoritos do Windows.</p>
+                </div>
+                <button onclick="openShortcutModal()" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3 px-6 rounded-xl transition duration-200 w-full justify-center shadow-lg shadow-emerald-950/30">
+                    <span>Criar Atalho</span>
+                    <i data-lucide="star" class="w-5 h-5"></i>
+                </button>
+            </div>
+
         </div>
 
         <!-- Alerta informativo rodapé -->
@@ -205,17 +263,38 @@
 
     </main>
 
-    <!-- Rodapé & Botão de Compartilhar -->
-    <footer class="bg-slate-900 border-t border-slate-800 py-8 px-4 text-center mt-8 space-y-6">
-        <div class="max-w-md mx-auto">
-            <button onclick="shareResults()" class="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold py-3.5 px-6 rounded-xl transition duration-200 shadow-lg shadow-emerald-950/50 w-full">
-                <i data-lucide="share-2" class="w-5 h-5"></i>
-                <span>Compartilhar Resultados</span>
+    <!-- JANELA MODAL INTERATIVA DE ATALHO (Oculta por padrão) -->
+    <div id="shortcut-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 relative shadow-2xl animate-in fade-in zoom-in duration-200">
+            <!-- Botão de Fechar Modal -->
+            <button onclick="closeShortcutModal()" class="absolute top-4 right-4 text-slate-450 hover:text-white transition">
+                <i data-lucide="x" class="w-6 h-6"></i>
             </button>
+
+            <!-- Título e Ícone -->
+            <div class="flex items-center gap-3 mb-4">
+                <div id="modal-platform-icon" class="p-2.5 bg-emerald-500/10 rounded-lg text-emerald-400">
+                    <!-- Preenchido pelo JavaScript -->
+                </div>
+                <h4 id="modal-title" class="text-base font-extrabold text-slate-200 uppercase tracking-wide">Adicionar Atalho</h4>
+            </div>
+
+            <!-- Descrição e Passo a Passo (Dinâmico por SO) -->
+            <div id="modal-instructions" class="space-y-4 text-sm text-slate-300 border-t border-slate-800 pt-4">
+                <!-- Inserido dinamicamente pelo JavaScript -->
+            </div>
+
+            <!-- Botão de Ação Auxiliar -->
+            <div id="modal-action-wrapper" class="mt-6 hidden">
+                <!-- Botão nativo de instalar PWA para Android/Chrome se aplicável -->
+            </div>
         </div>
-        
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-8 px-4 text-center mt-8 space-y-6">
         <!-- Homenagem Armando Gomes -->
-        <div class="border-t border-slate-800/60 pt-6">
+        <div>
             <p class="text-emerald-400 font-black text-lg md:text-xl tracking-widest uppercase italic">
                 "DEUS EXISTE!" - ARMANDO GOMES
             </p>
@@ -227,34 +306,172 @@
 
     <!-- Lógica JavaScript do Aplicativo -->
     <script>
-        // Dados oficiais mapeados com o desdobramento exato de Vitórias, Empates e Derrotas do Brasileirão 2026
+        // Dados oficiais mapeados com o desdobramento de Vitórias, Empates e Derrotas do Brasileirão 2026
+        // Os IDs (espnId) correspondem aos identificadores de imagens de escudos oficiais hospedados pela ESPN CDN
         const teamDatabase = [
-            { id: 1, name: "Palmeiras", logoBg: "#006437", logoText: "#FFF", played: 16, points: 35, wins: 10, draws: 5, losses: 1, coach: "Abel Ferreira" },
-            { id: 2, name: "Flamengo", logoBg: "#C1272D", logoText: "#FFF", played: 15, points: 31, wins: 9, draws: 4, losses: 2, coach: "Leonardo Jardim" },
-            { id: 3, name: "Fluminense", logoBg: "#800020", logoText: "#FFF", played: 16, points: 30, wins: 9, draws: 3, losses: 4, coach: "Luis Zubeldía" },
-            { id: 4, name: "São Paulo", logoBg: "#FF0000", logoText: "#FFF", played: 16, points: 24, wins: 7, draws: 3, losses: 6, coach: "Dorival Júnior" },
-            { id: 5, name: "Athletico-PR", logoBg: "#000", logoText: "#C1272D", played: 16, points: 24, wins: 7, draws: 3, losses: 6, coach: "Odair Hellmann" },
-            { id: 6, name: "Red Bull Bragantino", logoBg: "#FFF", logoText: "#FF0000", played: 16, points: 23, wins: 6, draws: 5, losses: 5, coach: "Vagner Mancini" },
-            { id: 7, name: "Coritiba SAF", logoBg: "#00532E", logoText: "#FFF", played: 16, points: 23, wins: 6, draws: 5, losses: 5, coach: "Fernando Seabra" },
-            { id: 8, name: "Bahia", logoBg: "#004B87", logoText: "#FFF", played: 15, points: 23, wins: 6, draws: 5, losses: 4, coach: "Rogério Ceni" },
-            { id: 9, name: "Botafogo", logoBg: "#000", logoText: "#FFF", played: 15, points: 21, wins: 6, draws: 3, losses: 6, coach: "Franclim Carvalho" },
-            { id: 10, name: "Atlético-MG", logoBg: "#222", logoText: "#FFF", played: 16, points: 21, wins: 5, draws: 6, losses: 5, coach: "Eduardo Domínguez" },
-            { id: 11, name: "Internacional", logoBg: "#E31C1C", logoText: "#FFF", played: 16, points: 21, wins: 5, draws: 6, losses: 5, coach: "Paulo Pezzolano" },
-            { id: 12, name: "Vasco da Gama SAF", logoBg: "#111", logoText: "#FFF", played: 16, points: 20, wins: 5, draws: 5, losses: 6, coach: "Renato Gaúcho" },
-            { id: 13, name: "Cruzeiro", logoBg: "#003399", logoText: "#FFF", played: 16, points: 20, wins: 5, draws: 5, losses: 6, coach: "Artur Jorge" },
-            { id: 14, name: "Vitória", logoBg: "#E31C1C", logoText: "#000", played: 15, points: 19, wins: 5, draws: 4, losses: 6, coach: "Jair Ventura" },
-            { id: 15, name: "Grêmio", logoBg: "#0D82D1", logoText: "#FFF", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Luís Castro" },
-            { id: 16, name: "Santos FC", logoBg: "#FFF", logoText: "#000", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Cuca" },
-            { id: 17, name: "Corinthians", logoBg: "#111", logoText: "#FFF", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Fernando Diniz" },
-            { id: 18, name: "Remo", logoBg: "#121A3E", logoText: "#FFF", played: 16, points: 15, wins: 3, draws: 6, losses: 7, coach: "Léo Condé" },
-            { id: 19, name: "Mirassol", logoBg: "#FFD700", logoText: "#008000", played: 15, points: 13, wins: 3, draws: 4, losses: 8, coach: "Rafael Guanaes" },
-            { id: 20, name: "Chapecoense", logoBg: "#007A33", logoText: "#FFF", played: 15, points: 9, wins: 1, draws: 6, losses: 8, coach: "Fábio Matias" }
+            { id: 1, name: "Palmeiras", espnId: 2029, logoBg: "#006437", logoText: "#FFF", played: 16, points: 35, wins: 10, draws: 5, losses: 1, coach: "Abel Ferreira" },
+            { id: 2, name: "Flamengo", espnId: 2019, logoBg: "#C1272D", logoText: "#FFF", played: 15, points: 31, wins: 9, draws: 4, losses: 2, coach: "Leonardo Jardim" },
+            { id: 3, name: "Fluminense", espnId: 2018, logoBg: "#800020", logoText: "#FFF", played: 16, points: 30, wins: 9, draws: 3, losses: 4, coach: "Luis Zubeldía" },
+            { id: 4, name: "São Paulo", espnId: 2026, logoBg: "#FF0000", logoText: "#FFF", played: 16, points: 24, wins: 7, draws: 3, losses: 6, coach: "Dorival Júnior" },
+            { id: 5, name: "Athletico-PR", espnId: 2017, logoBg: "#000", logoText: "#C1272D", played: 16, points: 24, wins: 7, draws: 3, losses: 6, coach: "Odair Hellmann" },
+            { id: 6, name: "Red Bull Bragantino", espnId: 8731, logoBg: "#FFF", logoText: "#FF0000", played: 16, points: 23, wins: 6, draws: 5, losses: 5, coach: "Vagner Mancini" },
+            { id: 7, name: "Coritiba SAF", espnId: 2014, logoBg: "#00532E", logoText: "#FFF", played: 16, points: 23, wins: 6, draws: 5, losses: 5, coach: "Fernando Seabra" },
+            { id: 8, name: "Bahia", espnId: 2013, logoBg: "#004B87", logoText: "#FFF", played: 15, points: 23, wins: 6, draws: 5, losses: 4, coach: "Rogério Ceni" },
+            { id: 9, name: "Botafogo", espnId: 2011, logoBg: "#000", logoText: "#FFF", played: 15, points: 21, wins: 6, draws: 3, losses: 6, coach: "Franclim Carvalho" },
+            { id: 10, name: "Atlético-MG", espnId: 2012, logoBg: "#222", logoText: "#FFF", played: 16, points: 21, wins: 5, draws: 6, losses: 5, coach: "Eduardo Domínguez" },
+            { id: 11, name: "Internacional", espnId: 2021, logoBg: "#E31C1C", logoText: "#FFF", played: 16, points: 21, wins: 5, draws: 6, losses: 5, coach: "Paulo Pezzolano" },
+            { id: 12, name: "Vasco da Gama SAF", espnId: 2035, logoBg: "#111", logoText: "#FFF", played: 16, points: 20, wins: 5, draws: 5, losses: 6, coach: "Renato Gaúcho" },
+            { id: 13, name: "Cruzeiro", espnId: 2016, logoBg: "#003399", logoText: "#FFF", played: 16, points: 20, wins: 5, draws: 5, losses: 6, coach: "Artur Jorge" },
+            { id: 14, name: "Vitória", espnId: 2034, logoBg: "#E31C1C", logoText: "#000", played: 15, points: 19, wins: 5, draws: 4, losses: 6, coach: "Jair Ventura" },
+            { id: 15, name: "Grêmio", espnId: 2020, logoBg: "#0D82D1", logoText: "#FFF", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Luís Castro" },
+            { id: 16, name: "Santos FC", espnId: 2674, logoBg: "#FFF", logoText: "#000", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Cuca" },
+            { id: 17, name: "Corinthians", espnId: 2015, logoBg: "#111", logoText: "#FFF", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Fernando Diniz" },
+            { id: 18, name: "Remo", espnId: 3374, logoBg: "#121A3E", logoText: "#FFF", played: 16, points: 15, wins: 3, draws: 6, losses: 7, coach: "Léo Condé" },
+            { id: 19, name: "Mirassol", espnId: 10421, logoBg: "#FFD700", logoText: "#008000", played: 15, points: 13, wins: 3, draws: 4, losses: 8, coach: "Rafael Guanaes" },
+            { id: 20, name: "Chapecoense", espnId: 5163, logoBg: "#007A33", logoText: "#FFF", played: 15, points: 9, wins: 1, draws: 6, losses: 8, coach: "Fábio Matias" }
         ];
+
+        // Variável para capturar o evento de instalação PWA
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+
+        // Detecta o SO
+        function getMobileOS() {
+            const ua = navigator.userAgent.toLowerCase();
+            if (/iphone|ipad|ipod/.test(ua)) return 'ios';
+            if (/android/.test(ua)) return 'android';
+            return 'windows';
+        }
+
+        // Abre o modal de atalho
+        function openShortcutModal() {
+            const os = getMobileOS();
+            const modal = document.getElementById("shortcut-modal");
+            const modalTitle = document.getElementById("modal-title");
+            const modalIconContainer = document.getElementById("modal-platform-icon");
+            const instructionsContainer = document.getElementById("modal-instructions");
+            const actionWrapper = document.getElementById("modal-action-wrapper");
+
+            modal.classList.remove("hidden");
+            actionWrapper.classList.add("hidden");
+
+            if (os === 'ios') {
+                modalIconContainer.innerHTML = `<i data-lucide="smartphone" class="w-6 h-6"></i>`;
+                modalTitle.innerText = "Instalar no iPhone (Safari)";
+                instructionsContainer.innerHTML = `
+                    <p class="font-medium text-slate-100">Para adicionar este aplicativo à sua tela inicial:</p>
+                    <ol class="list-decimal pl-5 space-y-2 text-slate-400">
+                        <li>Toque no botão de <strong>Compartilhar</strong> <span class="inline-block align-middle text-emerald-400"><i data-lucide="share" class="w-4 h-4"></i></span>.</li>
+                        <li>Escolha a opção <strong>"Adicionar à Tela de Início"</strong>.</li>
+                        <li>Toque em <strong>"Adicionar"</strong> no canto superior direito.</li>
+                    </ol>
+                `;
+            } else if (os === 'android') {
+                modalIconContainer.innerHTML = `<i data-lucide="android" class="w-6 h-6"></i>`;
+                modalTitle.innerText = "Instalar no Android (Chrome)";
+                
+                if (deferredPrompt) {
+                    instructionsContainer.innerHTML = `
+                        <p class="font-medium text-slate-100">Instalação direta disponível.</p>
+                        <p class="text-slate-400">Clique no botão abaixo para fixar este aplicativo na sua tela de início.</p>
+                    `;
+                    actionWrapper.classList.remove("hidden");
+                    actionWrapper.innerHTML = `
+                        <button onclick="triggerNativeInstall()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3 rounded-xl transition duration-200 flex items-center justify-center gap-2">
+                            <i data-lucide="download-cloud" class="w-5 h-5"></i>
+                            <span>Confirmar Instalação</span>
+                        </button>
+                    `;
+                } else {
+                    instructionsContainer.innerHTML = `
+                        <p class="font-medium text-slate-100">Como criar o atalho:</p>
+                        <ol class="list-decimal pl-5 space-y-2 text-slate-400">
+                            <li>Abra as configurações do Chrome nos <strong>três pontinhos (⋮)</strong> no canto superior.</li>
+                            <li>Escolha a opção <strong>"Adicionar à tela inicial"</strong>.</li>
+                            <li>Confirme clicando em <strong>"Adicionar"</strong>.</li>
+                        </ol>
+                    `;
+                }
+            } else {
+                modalIconContainer.innerHTML = `<i data-lucide="monitor" class="w-6 h-6"></i>`;
+                modalTitle.innerText = "Salvar nos Favoritos";
+                instructionsContainer.innerHTML = `
+                    <p class="font-medium text-slate-100">Para salvar e acessar rapidamente no computador:</p>
+                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center space-y-1">
+                        <span class="text-xs text-slate-500 uppercase font-bold">Atalho de Teclado</span>
+                        <p class="text-xl font-black text-emerald-400 tracking-wider">CTRL + D</p>
+                    </div>
+                `;
+            }
+
+            safeCreateIcons();
+        }
+
+        function closeShortcutModal() {
+            document.getElementById("shortcut-modal").classList.add("hidden");
+        }
+
+        function triggerNativeInstall() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then(() => {
+                    deferredPrompt = null;
+                    closeShortcutModal();
+                });
+            }
+        }
+
+        // Função de execução segura de ícones
+        function safeCreateIcons() {
+            try {
+                if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') {
+                    lucide.createIcons();
+                }
+            } catch (error) {
+                console.warn("Lucide icons failed to load:", error);
+            }
+        }
+
+        // Reconstrói as vitórias, empates e derrotas matematicamente a partir dos pontos para manter consistência
+        function solveVED(team) {
+            let v = Math.floor(team.points / 3);
+            let e = team.points - (v * 3);
+            let d = team.played - (v + e);
+            
+            // Corrige se as derrotas estourarem abaixo de zero devido à simulação de alta pontuação
+            while (d < 0 && v > 0) {
+                v--;
+                e = team.points - (v * 3);
+                d = team.played - (v + e);
+            }
+            
+            if (d >= 0 && v >= 0 && e >= 0 && (v + e + d === team.played)) {
+                team.wins = v;
+                team.draws = e;
+                team.losses = d;
+            }
+        }
+
+        // Altera pontuações diretamente, recalculando o desdobramento V, E, D
+        function updatePoints(teamId, amount) {
+            const team = teamDatabase.find(t => t.id === teamId);
+            if (team) {
+                const newPoints = team.points + amount;
+                if (newPoints >= 0 && newPoints <= (team.played * 3)) {
+                    team.points = newPoints;
+                    solveVED(team);
+                    renderTable();
+                }
+            }
+        }
 
         // Função de cálculo de Risco de Queda (Probabilidade Matemática baseada em metas)
         function calculateRelegationRisk(points, played, rank) {
             const safetyMargin = 45; 
-            const remainingMatches = 38 - played;
+            const remainingMatches = Math.max(1, 38 - played); // Previne divisão por zero se ultrapassar 38
             
             if (points >= safetyMargin) return 0;
             
@@ -278,9 +495,8 @@
             return Math.min(99.9, Math.max(0, parseFloat(risk.toFixed(1))));
         }
 
-        // Renderiza a tabela de classificação com o novo desdobramento de estatísticas
+        // Renderiza a tabela de classificação oficial e os logos CDN da ESPN
         function renderTable() {
-            // Ordenar por pontos, saldo (simulado através de vitórias) e ID como desempate
             teamDatabase.sort((a, b) => b.points - a.points || b.wins - a.wins || a.id - b.id);
 
             const tbody = document.getElementById("table-body");
@@ -307,6 +523,10 @@
 
                 const tr = document.createElement("tr");
                 tr.className = rowBgClass;
+                
+                // Url do escudo oficial hospedado no servidor de imagens da ESPN
+                const espnLogoUrl = `https://a.espncdn.com/i/teamlogos/soccer/500/${team.espnId}.png`;
+
                 tr.innerHTML = `
                     <td class="py-3 px-3 text-center font-extrabold">
                         <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs ${badgeClass}">
@@ -315,41 +535,31 @@
                     </td>
                     <td class="py-3 px-4 font-semibold text-slate-200">
                         <div class="flex items-center gap-2.5">
-                            <span class="w-5 h-5 rounded-full flex items-center justify-center font-black text-[9px] shadow-sm shrink-0" style="background-color: ${team.logoBg}; color: ${team.logoText};">
-                                ${team.name.substring(0,2).toUpperCase()}
-                            </span>
-                            <span class="truncate max-w-[140px] md:max-w-none">${team.name}</span>
+                            <!-- Logo Oficial da ESPN com Fallback automático em CSS/Texto caso ocorra falha de CDN -->
+                            <div class="relative w-6 h-6 flex items-center justify-center rounded-full overflow-hidden shrink-0" style="background-color: ${team.logoBg};">
+                                <span class="absolute text-[8px] font-bold select-none text-center" style="color: ${team.logoText};">
+                                    ${team.name.substring(0,2).toUpperCase()}
+                                </span>
+                                <img src="${espnLogoUrl}" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-contain z-10" alt="">
+                            </div>
+                            <span class="truncate max-w-[150px] md:max-w-none">${team.name}</span>
                         </div>
                     </td>
                     <td class="py-3 px-3 text-center font-semibold text-slate-400 border-r border-slate-800/80">${team.played}</td>
-                    <td class="py-3 px-3 text-center font-extrabold text-emerald-400 bg-slate-900/40">${team.points}</td>
                     
-                    <!-- Simulação de Vitórias -->
-                    <td class="py-3 px-3 text-center">
-                        <div class="flex items-center justify-center gap-1.5">
-                            <button onclick="updateStat(${team.id}, 'wins', -1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-rose-400 flex items-center justify-center font-bold text-xs select-none">-</button>
-                            <span class="font-bold text-slate-200 min-w-[16px] text-center">${team.wins}</span>
-                            <button onclick="updateStat(${team.id}, 'wins', 1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-emerald-400 flex items-center justify-center font-bold text-xs select-none">+</button>
+                    <!-- Simulação Direta na Coluna Pontos -->
+                    <td class="py-3 px-3 text-center bg-slate-900/40">
+                        <div class="flex items-center justify-center gap-2">
+                            <button onclick="updatePoints(${team.id}, -1)" class="w-5 h-5 rounded bg-slate-850 hover:bg-slate-700 text-rose-400 flex items-center justify-center font-bold text-xs select-none">-</button>
+                            <span class="font-extrabold text-emerald-400 min-w-[20px] text-center">${team.points}</span>
+                            <button onclick="updatePoints(${team.id}, 1)" class="w-5 h-5 rounded bg-slate-850 hover:bg-slate-700 text-emerald-400 flex items-center justify-center font-bold text-xs select-none">+</button>
                         </div>
                     </td>
                     
-                    <!-- Simulação de Empates -->
-                    <td class="py-3 px-3 text-center">
-                        <div class="flex items-center justify-center gap-1.5">
-                            <button onclick="updateStat(${team.id}, 'draws', -1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-amber-400 flex items-center justify-center font-bold text-xs select-none">-</button>
-                            <span class="font-bold text-slate-200 min-w-[16px] text-center">${team.draws}</span>
-                            <button onclick="updateStat(${team.id}, 'draws', 1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-amber-400 flex items-center justify-center font-bold text-xs select-none">+</button>
-                        </div>
-                    </td>
-                    
-                    <!-- Simulação de Derrotas -->
-                    <td class="py-3 px-3 text-center border-r border-slate-800/80">
-                        <div class="flex items-center justify-center gap-1.5">
-                            <button onclick="updateStat(${team.id}, 'losses', -1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-rose-500 flex items-center justify-center font-bold text-xs select-none">-</button>
-                            <span class="font-bold text-slate-200 min-w-[16px] text-center">${team.losses}</span>
-                            <button onclick="updateStat(${team.id}, 'losses', 1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-emerald-500 flex items-center justify-center font-bold text-xs select-none">+</button>
-                        </div>
-                    </td>
+                    <!-- Estatísticas V, E, D como Colunas Informativas -->
+                    <td class="py-3 px-3 text-center font-medium text-slate-350">${team.wins}</td>
+                    <td class="py-3 px-3 text-center font-medium text-slate-350">${team.draws}</td>
+                    <td class="py-3 px-3 text-center font-medium text-slate-350 border-r border-slate-800/80">${team.losses}</td>
 
                     <td class="py-3 px-4 text-center font-extrabold ${riskTextClass}">${risk}%</td>
                     <td class="py-3 px-4 text-slate-300 truncate max-w-[150px] md:max-w-none">${team.coach}</td>
@@ -357,39 +567,7 @@
                 tbody.appendChild(tr);
             });
 
-            lucide.createIcons();
-        }
-
-        // Incrementa ou decrementa estatísticas específicas preservando o limite de 38 rodadas
-        function updateStat(teamId, stat, amount) {
-            const team = teamDatabase.find(t => t.id === teamId);
-            if (!team) return;
-
-            // Calcula total de jogos pretendido
-            const currentTotal = team.wins + team.draws + team.losses;
-            
-            if (stat === 'wins') {
-                const target = team.wins + amount;
-                if (target >= 0 && (currentTotal + amount) <= 38) {
-                    team.wins = target;
-                }
-            } else if (stat === 'draws') {
-                const target = team.draws + amount;
-                if (target >= 0 && (currentTotal + amount) <= 38) {
-                    team.draws = target;
-                }
-            } else if (stat === 'losses') {
-                const target = team.losses + amount;
-                if (target >= 0 && (currentTotal + amount) <= 38) {
-                    team.losses = target;
-                }
-            }
-
-            // Atualiza campos calculados
-            team.played = team.wins + team.draws + team.losses;
-            team.points = (team.wins * 3) + team.draws;
-
-            renderTable();
+            safeCreateIcons();
         }
 
         // Função de Cálculo de Aproveitamento de Técnico (Interativa)

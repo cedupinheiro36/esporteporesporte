@@ -45,12 +45,15 @@
                     </div>
                     <div class="space-y-2">
                         <div class="flex items-center justify-between text-xs">
-                            <span class="font-bold text-slate-350">Grêmio</span>
+                            <span class="font-bold text-slate-350 flex items-center gap-1.5">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/6273.png&w=40&h=40" class="w-4 h-4 object-contain" alt="">
+                                Grêmio
+                            </span>
                             <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">CASA</span>
                         </div>
                         <div class="flex items-center justify-between text-xs">
                             <span class="font-bold text-emerald-400 flex items-center gap-1.5">
-                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/2674.png" class="w-4 h-4 object-contain" alt="">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2674.png&w=40&h=40" class="w-4 h-4 object-contain" alt="">
                                 Santos FC
                             </span>
                             <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">FORA</span>
@@ -73,7 +76,7 @@
                     <div class="space-y-2">
                         <div class="flex items-center justify-between text-xs">
                             <span class="font-bold text-emerald-400 flex items-center gap-1.5">
-                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/2674.png" class="w-4 h-4 object-contain" alt="">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2674.png&w=40&h=40" class="w-4 h-4 object-contain" alt="">
                                 Santos FC
                             </span>
                             <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">CASA</span>
@@ -100,13 +103,16 @@
                     <div class="space-y-2">
                         <div class="flex items-center justify-between text-xs">
                             <span class="font-bold text-emerald-400 flex items-center gap-1.5">
-                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/2674.png" class="w-4 h-4 object-contain" alt="">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2674.png&w=40&h=40" class="w-4 h-4 object-contain" alt="">
                                 Santos FC
                             </span>
                             <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">CASA</span>
                         </div>
                         <div class="flex items-center justify-between text-xs">
-                            <span class="font-bold text-slate-350">Vitória</span>
+                            <span class="font-bold text-slate-350 flex items-center gap-1.5">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/3457.png&w=40&h=40" class="w-4 h-4 object-contain" alt="">
+                                Vitória
+                            </span>
                             <span class="text-[9px] text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">FORA</span>
                         </div>
                     </div>
@@ -124,7 +130,7 @@
         <!-- Seção de Instruções do Simulador -->
         <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
             <h2 class="text-base font-bold text-slate-200">Simulador de Probabilidades</h2>
-            <p class="text-xs text-slate-400 mt-1">Utilize os botões de ajuste <span class="text-emerald-400 font-bold">(+)</span> and <span class="text-rose-450 font-bold">(-)</span> na coluna de **Pontos** para recalcular o risco de queda e ver as estatísticas de Vitórias, Empates e Derrotas atualizadas proporcionalmente.</p>
+            <p class="text-xs text-slate-400 mt-1">Utilize os botões de ajuste <span class="text-emerald-400 font-bold">(+)</span> e <span class="text-rose-450 font-bold">(-)</span> na coluna de **Pontos** para recalcular o risco de queda e ver as estatísticas de Vitórias, Empates e Derrotas atualizadas proporcionalmente.</p>
         </div>
 
         <!-- Tabela Responsiva de Classificação -->
@@ -151,7 +157,7 @@
             </div>
         </div>
 
-        <!-- NOVA ESTRUTURA: Botões de Ação Lado a Lado (Compartilhar e Reiniciar) -->
+        <!-- Botões de Ação Lado a Lado (Compartilhar e Reiniciar) -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-2xl mx-auto pt-2">
             <!-- Botão Compartilhar Resultados -->
             <button onclick="shareResults()" class="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold py-3.5 px-6 rounded-xl transition duration-200 shadow-lg shadow-emerald-950/50 w-full sm:w-1/2">
@@ -307,28 +313,28 @@
     <!-- Lógica JavaScript do Aplicativo -->
     <script>
         // Dados oficiais mapeados com o desdobramento de Vitórias, Empates e Derrotas do Brasileirão 2026
-        // Os IDs (espnId) correspondem aos identificadores de imagens de escudos oficiais hospedados pela ESPN CDN
+        // Os IDs (espnId) correspondem aos identificadores de imagens de escudos oficiais hospedados pela ESPN CDN obtidos na página de classificação
         const teamDatabase = [
             { id: 1, name: "Palmeiras", espnId: 2029, logoBg: "#006437", logoText: "#FFF", played: 16, points: 35, wins: 10, draws: 5, losses: 1, coach: "Abel Ferreira" },
-            { id: 2, name: "Flamengo", espnId: 2019, logoBg: "#C1272D", logoText: "#FFF", played: 15, points: 31, wins: 9, draws: 4, losses: 2, coach: "Leonardo Jardim" },
-            { id: 3, name: "Fluminense", espnId: 2018, logoBg: "#800020", logoText: "#FFF", played: 16, points: 30, wins: 9, draws: 3, losses: 4, coach: "Luis Zubeldía" },
+            { id: 2, name: "Flamengo", espnId: 819, logoBg: "#C1272D", logoText: "#FFF", played: 15, points: 31, wins: 9, draws: 4, losses: 2, coach: "Leonardo Jardim" },
+            { id: 3, name: "Fluminense", espnId: 3445, logoBg: "#800020", logoText: "#FFF", played: 16, points: 30, wins: 9, draws: 3, losses: 4, coach: "Luis Zubeldía" },
             { id: 4, name: "São Paulo", espnId: 2026, logoBg: "#FF0000", logoText: "#FFF", played: 16, points: 24, wins: 7, draws: 3, losses: 6, coach: "Dorival Júnior" },
-            { id: 5, name: "Athletico-PR", espnId: 2017, logoBg: "#000", logoText: "#C1272D", played: 16, points: 24, wins: 7, draws: 3, losses: 6, coach: "Odair Hellmann" },
-            { id: 6, name: "Red Bull Bragantino", espnId: 8731, logoBg: "#FFF", logoText: "#FF0000", played: 16, points: 23, wins: 6, draws: 5, losses: 5, coach: "Vagner Mancini" },
-            { id: 7, name: "Coritiba SAF", espnId: 2014, logoBg: "#00532E", logoText: "#FFF", played: 16, points: 23, wins: 6, draws: 5, losses: 5, coach: "Fernando Seabra" },
-            { id: 8, name: "Bahia", espnId: 2013, logoBg: "#004B87", logoText: "#FFF", played: 15, points: 23, wins: 6, draws: 5, losses: 4, coach: "Rogério Ceni" },
-            { id: 9, name: "Botafogo", espnId: 2011, logoBg: "#000", logoText: "#FFF", played: 15, points: 21, wins: 6, draws: 3, losses: 6, coach: "Franclim Carvalho" },
-            { id: 10, name: "Atlético-MG", espnId: 2012, logoBg: "#222", logoText: "#FFF", played: 16, points: 21, wins: 5, draws: 6, losses: 5, coach: "Eduardo Domínguez" },
-            { id: 11, name: "Internacional", espnId: 2021, logoBg: "#E31C1C", logoText: "#FFF", played: 16, points: 21, wins: 5, draws: 6, losses: 5, coach: "Paulo Pezzolano" },
-            { id: 12, name: "Vasco da Gama SAF", espnId: 2035, logoBg: "#111", logoText: "#FFF", played: 16, points: 20, wins: 5, draws: 5, losses: 6, coach: "Renato Gaúcho" },
-            { id: 13, name: "Cruzeiro", espnId: 2016, logoBg: "#003399", logoText: "#FFF", played: 16, points: 20, wins: 5, draws: 5, losses: 6, coach: "Artur Jorge" },
-            { id: 14, name: "Vitória", espnId: 2034, logoBg: "#E31C1C", logoText: "#000", played: 15, points: 19, wins: 5, draws: 4, losses: 6, coach: "Jair Ventura" },
-            { id: 15, name: "Grêmio", espnId: 2020, logoBg: "#0D82D1", logoText: "#FFF", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Luís Castro" },
+            { id: 5, name: "Athletico-PR", espnId: 3458, logoBg: "#000", logoText: "#C1272D", played: 16, points: 24, wins: 7, draws: 3, losses: 6, coach: "Odair Hellmann" },
+            { id: 6, name: "Red Bull Bragantino", espnId: 6079, logoBg: "#FFF", logoText: "#FF0000", played: 16, points: 23, wins: 6, draws: 5, losses: 5, coach: "Vagner Mancini" },
+            { id: 7, name: "Coritiba SAF", espnId: 3456, logoBg: "#00532E", logoText: "#FFF", played: 16, points: 23, wins: 6, draws: 5, losses: 5, coach: "Fernando Seabra" },
+            { id: 8, name: "Bahia", espnId: 9967, logoBg: "#004B87", logoText: "#FFF", played: 15, points: 23, wins: 6, draws: 5, losses: 4, coach: "Rogério Ceni" },
+            { id: 9, name: "Botafogo", espnId: 6086, logoBg: "#000", logoText: "#FFF", played: 15, points: 21, wins: 6, draws: 3, losses: 6, coach: "Franclim Carvalho" },
+            { id: 10, name: "Atlético-MG", espnId: 7632, logoBg: "#222", logoText: "#FFF", played: 16, points: 21, wins: 5, draws: 6, losses: 5, coach: "Eduardo Domínguez" },
+            { id: 11, name: "Internacional", espnId: 1936, logoBg: "#E31C1C", logoText: "#FFF", played: 16, points: 21, wins: 5, draws: 6, losses: 5, coach: "Paulo Pezzolano" },
+            { id: 12, name: "Vasco da Gama SAF", espnId: 3454, logoBg: "#111", logoText: "#FFF", played: 16, points: 20, wins: 5, draws: 5, losses: 6, coach: "Renato Gaúcho" },
+            { id: 13, name: "Cruzeiro", espnId: 2022, logoBg: "#003399", logoText: "#FFF", played: 16, points: 20, wins: 5, draws: 5, losses: 6, coach: "Artur Jorge" },
+            { id: 14, name: "Vitória", espnId: 3457, logoBg: "#E31C1C", logoText: "#000", played: 15, points: 19, wins: 5, draws: 4, losses: 6, coach: "Jair Ventura" },
+            { id: 15, name: "Grêmio", espnId: 6273, logoBg: "#0D82D1", logoText: "#FFF", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Luís Castro" },
             { id: 16, name: "Santos FC", espnId: 2674, logoBg: "#FFF", logoText: "#000", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Cuca" },
-            { id: 17, name: "Corinthians", espnId: 2015, logoBg: "#111", logoText: "#FFF", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Fernando Diniz" },
-            { id: 18, name: "Remo", espnId: 3374, logoBg: "#121A3E", logoText: "#FFF", played: 16, points: 15, wins: 3, draws: 6, losses: 7, coach: "Léo Condé" },
-            { id: 19, name: "Mirassol", espnId: 10421, logoBg: "#FFD700", logoText: "#008000", played: 15, points: 13, wins: 3, draws: 4, losses: 8, coach: "Rafael Guanaes" },
-            { id: 20, name: "Chapecoense", espnId: 5163, logoBg: "#007A33", logoText: "#FFF", played: 15, points: 9, wins: 1, draws: 6, losses: 8, coach: "Fábio Matias" }
+            { id: 17, name: "Corinthians", espnId: 874, logoBg: "#111", logoText: "#FFF", played: 16, points: 18, wins: 4, draws: 6, losses: 6, coach: "Fernando Diniz" },
+            { id: 18, name: "Remo", espnId: 4936, logoBg: "#121A3E", logoText: "#FFF", played: 16, points: 15, wins: 3, draws: 6, losses: 7, coach: "Léo Condé" },
+            { id: 19, name: "Mirassol", espnId: 9169, logoBg: "#FFD700", logoText: "#008000", played: 15, points: 13, wins: 3, draws: 4, losses: 8, coach: "Rafael Guanaes" },
+            { id: 20, name: "Chapecoense", espnId: 9318, logoBg: "#007A33", logoText: "#FFF", played: 15, points: 9, wins: 1, draws: 6, losses: 8, coach: "Fábio Matias" }
         ];
 
         // Variável para capturar o evento de instalação PWA
@@ -495,7 +501,7 @@
             return Math.min(99.9, Math.max(0, parseFloat(risk.toFixed(1))));
         }
 
-        // Renderiza a tabela de classificação oficial e os logos CDN da ESPN
+        // Renderiza a tabela de classificação oficial e os logos CDN da ESPN com o Combiner oficial
         function renderTable() {
             teamDatabase.sort((a, b) => b.points - a.points || b.wins - a.wins || a.id - b.id);
 
@@ -524,8 +530,8 @@
                 const tr = document.createElement("tr");
                 tr.className = rowBgClass;
                 
-                // Url do escudo oficial hospedado no servidor de imagens da ESPN
-                const espnLogoUrl = `https://a.espncdn.com/i/teamlogos/soccer/500/${team.espnId}.png`;
+                // Url do escudo oficial hospedado no servidor de imagens da ESPN (Formato Combiner exato de bra.1)
+                const espnLogoUrl = `https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/${team.espnId}.png&w=40&h=40`;
 
                 tr.innerHTML = `
                     <td class="py-3 px-3 text-center font-extrabold">
@@ -535,7 +541,7 @@
                     </td>
                     <td class="py-3 px-4 font-semibold text-slate-200">
                         <div class="flex items-center gap-2.5">
-                            <!-- Logo Oficial da ESPN com Fallback automático em CSS/Texto caso ocorra falha de CDN -->
+                            <!-- Logo Oficial da ESPN via Combinador com Fallback automático em CSS/Texto -->
                             <div class="relative w-6 h-6 flex items-center justify-center rounded-full overflow-hidden shrink-0" style="background-color: ${team.logoBg};">
                                 <span class="absolute text-[8px] font-bold select-none text-center" style="color: ${team.logoText};">
                                     ${team.name.substring(0,2).toUpperCase()}

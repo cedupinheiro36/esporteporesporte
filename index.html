@@ -27,7 +27,8 @@
                 <p class="text-xs text-slate-400">Utilize os botões <span class="text-emerald-400 font-bold">(+)</span> e <span class="text-rose-400 font-bold">(-)</span> na tabela para simular pontos e recalcular os riscos de queda.</p>
             </div>
             
-            <button onclick="syncData()" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-5 rounded-lg transition duration-200 shadow-md shadow-emerald-900/30 w-full md:w-auto justify-center">
+            <!-- Botão Atualizar que realiza o refresh na página -->
+            <button onclick="window.location.reload()" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-5 rounded-lg transition duration-200 shadow-md shadow-emerald-900/30 w-full md:w-auto justify-center">
                 <i data-lucide="refresh-cw" class="w-5 h-5"></i>
                 <span>Atualizar Tabela</span>
             </button>
@@ -99,7 +100,7 @@
         <!-- Alerta informativo -->
         <div class="flex items-start gap-2 text-xs text-slate-500 px-2">
             <i data-lucide="info" class="w-4 h-4 shrink-0 mt-0.5 text-emerald-500"></i>
-            <p>O Risco de Queda é estimado matematicamente com base na projeção para atingir a meta histórica de segurança de 45 pontos, ponderado pela posição atual e jogos restantes. A calculadora de aproveitamento baseia-se na fórmula padrão da FIFA onde cada vitória vale 3 pontos e o empate vale 1 ponto.</p>
+            <p>O Risco de Queda é estimado matematicamente com base na projeção para atingir a meta histórica de segurança de 45 pontos, ponderado pela posição atual e jogos restantes. A calculadora de aproveitamento baseia-se na fórmula padrão onde cada vitória vale 3 pontos e o empate vale 1 ponto.</p>
         </div>
 
     </main>
@@ -143,7 +144,7 @@
 
         // Função de cálculo de Risco de Queda (Probabilidade Matemática baseada em metas)
         function calculateRelegationRisk(points, played, rank) {
-            const safetyMargin = 45; // Meta padrão para evitar o rebaixamento
+            const safetyMargin = 45; // Meta de pontos
             const remainingMatches = 38 - played;
             
             if (points >= safetyMargin) return 0;
@@ -153,7 +154,7 @@
 
             const requiredPpg = pointsNeeded / remainingMatches;
 
-            // Fatores base de cálculo do comportamento do campeonato
+            // Fatores de risco ponderados pela posição
             let risk = (requiredPpg / 3) * 100;
             
             if (rank <= 6) {
@@ -260,28 +261,6 @@
             document.getElementById("result-percentage").innerText = `${percentage}%`;
         }
 
-        // Função do botão de Atualização (Recarrega os valores iniciais da tabela)
-        function syncData() {
-            const btn = document.querySelector('button[onclick="syncData()"]');
-            const icon = btn.querySelector('i');
-            icon.classList.add('animate-spin');
-            
-            setTimeout(() => {
-                const defaultPoints = {
-                    1: 35, 2: 31, 3: 30, 4: 24, 5: 24, 6: 23, 7: 23, 8: 23, 
-                    9: 21, 10: 21, 11: 21, 12: 20, 13: 20, 14: 19, 15: 18, 
-                    16: 18, 17: 18, 18: 15, 19: 13, 20: 9
-                };
-                
-                teamDatabase.forEach(team => {
-                    team.points = defaultPoints[team.id];
-                });
-                
-                renderTable();
-                icon.classList.remove('animate-spin');
-            }, 600);
-        }
-
         // Função de Compartilhamento dos Resultados
         function shareResults() {
             const champion = teamDatabase[0];
@@ -320,4 +299,5 @@
         });
     </script>
 </body>
+</html>
 </html>
